@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/img/Logo.png';
+import Logo from '../../assets/img/Logo2.png';
 import './Menu.css';
 
 function Menu () {

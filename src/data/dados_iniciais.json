@@ -1,29 +1,29 @@
 {
   "categorias": [
     {
-      "titulo": "Front End",
+      "titulo": "Filmes de Ação",
       "link": "https://www.alura.com.br/formacao-front-end",
-      "cor": "#6BD1FF",
+      "cor": "#F40B0B",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Lágrimas do Sol",
+        "url": "https://www.youtube.com/embed/TXO9R8fr3-4"
       },
       "videos": [
         {
-          "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+          "titulo": "Lágrimas do Sol",
+          "url": "https://www.youtube.com/embed/TXO9R8fr3-4"
         },
         {
-          "titulo": "SEO com React",
-          "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+          "titulo": "Vigilantes da Guerra",
+          "url": "https://www.youtube.com/embed/wTaaS-4W1g0"
         },
         {
-          "titulo": "Componentização com VanillaJS #AluraMais",
-          "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+          "titulo": "BAD BOYS 3 Trailer #Dublado",
+          "url": "https://youtu.be/oqvlw6xwTr4"
         },
         {
-          "titulo": "Pare de chutar e aprenda a display: inline #01",
-          "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+          "titulo": "Sniper Americano #Dublado",
+          "url": "https://youtu.be/5TLx7IJXYbg"
         },
         {
           "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
@@ -100,16 +100,16 @@
       ]
     },
     {
-      "titulo": "Filmes",
+      "titulo": "Comédia",
       "cor": "orange",
       "videos": [
         {
-          "titulo": "Interestellar",
-          "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+          "titulo": "Friends o Filme - Trailer",
+          "url": "https://www.youtube.com/embed/Gpa5S8DgPzs"
         },
         {
-          "titulo": "Gattaca",
-          "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+          "titulo": "Friends o Filme - Trailer",
+          "url": "https://www.youtube.com/embed/Gpa5S8DgPzs"
         },
         {
           "titulo": "A Chegada",
@@ -123,7 +123,7 @@
     },
     {
       "titulo": "Games",
-      "cor": "red",
+      "cor": "#A82E8D",
       "link_extra": {
         "text": "Formação de Jogos na Alura",
         "url": "https://www.alura.com.br/formacao-jogos-unity"
