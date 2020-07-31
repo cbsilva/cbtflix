@@ -29,3 +29,78 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+/*
+  CSS para uso do formulario
+*/
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+form {
+  margin: auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.formField {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: black;
+}
+
+input {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--blackLighter);
+  border-radius: 4px;
+  white-space: normal;
+  font-size: 16px;
+  height: 54px;
+  padding: 13px 15px;
+  text-align: left;
+  transition: border .5s;
+  background-color: var(--blackLighter);
+}
+
+input:focus,
+input:hover {
+  border-bottom: 4px solid #1a73e8;
+}
+
+.formField__error {
+  color: #d93025;
+  font-size: 16px;
+  position: absolute;
+  margin-top: 5px;
+}
+
+
+button {
+  font-size: 16px;
+  border-radius: 4px;
+  background: #1a73e8;
+  color: #fff;
+  border: 0;
+  padding: 8px 16px;
+  transition: opacity .5s;
+}
+
+button:focus,
+button:hover {
+  opacity: .5;
+}
