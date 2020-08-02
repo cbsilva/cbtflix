@@ -1,9 +1,11 @@
 {
     "categorias": [
-        "id" : 1,
-        "nome" : "Front End",
-        "descricao" : "Uma Categoria Bacanuda",
-        "cor" : "#cbd1ff"
+        {
+            "id": 1,
+            "nome": "Front End",
+            "descricao" : "Uma Categoria Bacanuda",
+            "cor" : "#cbd1ff"
+        }
     ]
 
 }
