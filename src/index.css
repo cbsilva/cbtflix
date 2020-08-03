@@ -12,6 +12,7 @@
   --white: #FFFFFF;
   --frontEnd: #6BD1FF;
   --backEnd: #00C86F;
+  --orange: #FF5C00;
 }
 
 html,
@@ -30,47 +31,27 @@ a {
   flex-direction: column;
 }
 
-/*
-  CSS para uso do formulario
-*/
-h1 {
-  font-weight: bold;
-  font-size: 30px;
-  color: red;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-form {
-  margin: auto;
-  width: 100%;
-  max-width: 800px;
-  padding: 40px;
-  border-radius: 4px;
-  background-color: var(--white);
-}
 
+/*  CSS para uso do formulario
 .formField {
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-
 label {
   font-weight: bold;
   margin-bottom: 8px;
   display: block;
-  color: black;
+  color: var(--white);
 }
 
 input {
   width: 100%;
   display: block;
   border: 1px solid var(--blackLighter);
-  border-radius: 4px;
   white-space: normal;
   font-size: 16px;
-  height: 54px;
+  height: 40px;
   padding: 13px 15px;
   text-align: left;
   transition: border .5s;
@@ -79,8 +60,16 @@ input {
 
 input:focus,
 input:hover {
-  border-bottom: 4px solid #1a73e8;
+  border-bottom: 4px soid var(--orange);
 }
+
+form {
+  margin: auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+}
+
 
 .formField__error {
   color: #d93025;
@@ -99,8 +88,4 @@ button {
   padding: 8px 16px;
   transition: opacity .5s;
 }
-
-button:focus,
-button:hover {
-  opacity: .5;
-}
+*/

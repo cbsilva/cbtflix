@@ -1,145 +1,115 @@
-import React, {useState} from 'react';
-import PageDefault from '../../../components/PageDefault';
+/* eslint linebreak-style: ["error", "windows"] */
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
-
-function useFormik({
-  initialValues
-
-}) {
-  const [values, setValues] = useState(initialValues);
-
-  function handleChange(event) {
-    const fieldName = event.target.getAttribute('name');
-    const { value } = event.target;
-
-    setValues({
-      ...values,
-      [fieldName]: value,
-    });
-  }  
-  console.log(values);
-  return {
-    values,
-    handleChange
-  }
-
-}
 
 
 function CadastroCategoria() {
+  /**
+    * criando uma lista de categorias
+    */
+  const [categorias, setCategorias] = useState([]);
 
-    const formik = useFormik({
-      initialValues: {
-        categoryName: '',
-        categoryColor: '',
-        categoryDescription: '',
-        categoryUser: '',
-      },
-        onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
-      },
+  /**
+    * como temos mais de um objeto no formulario vamos criar um objeto
+    * para seta-los todos ao mesmo mesmo
+    */
+
+  const initialValue = {
+    name: '',
+    description: '',
+    color: '#000000',
+  };
+
+  /**
+    * [nomeDaCategoria, setNomeDaCategoria] = useState('Filmes')
+    * nomeDaCategoria = nome da variavel
+    * setNomeDaCategoria = sera utilizado para setar o valor da variavel
+    * Filmes = Valor inicial passado para o states
+    */
+  const [values, setValues] = useState(initialValue);
+
+  function setValue(key, value) {
+    setValues({
+      ...values,
+      [key]: value,
     });
-    
-    return (
-      <PageDefault>
-        <form onSubmit={(event) => {
+  }
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setValue(
+      name,
+      value,
+    );
+  }
+
+  return (
+    <PageDefault>
+      <div className="box">
+        <h1>
+          Cadastro Categoria:
+          { values.name }
+        </h1>
+        <form onSubmit={function handleSubmit(event) {
           event.preventDefault();
-          console.log(formik.values);
-          alert('Olha o console');
-        }}>
-        <h1>Nova Categoria</h1>
-          <div className="formField">
-            <label htmlFor="categoryForm">
-              Nome da Categoria:
-            </label>
-            <input
-              type="text"
-              placeholder="Nome da Categoria"
-              name="categoryName"
-              id="categoryName"
-              onChange={formik.handleChange}
-              value={formik.values.categoryName}
-            />   
-          </div>  
+          setCategorias([
+            ...categorias,
+            values,
+          ]);
 
-          <div className="formField">
-            <label htmlFor="categoryForm">
-              Cor:
-            </label>
-            <input
-              type="text"
-              placeholder="Cor da Categoria"
-              name="categoryColor"
-              id="categoryColor"
-              onChange={formik.handleChange}
-              value={formik.values.categoryColor}
-            />   
-          </div>  
+          setValues(initialValue);
+        }}
+        >
+          <FormField
+            label="Nome da Categoria"
+            type="text"
+            name="name"
+            value={values.name}
+            onChange={handleChange}
+          />
+          <FormField
+            as="textarea"
+            label="Descrição"
+            type="textarea"
+            name="description"
+            value={values.description}
+            onChange={handleChange}
+          />
 
-          <div className="formField">
-            <label htmlFor="categoryForm">
-              Cor:
-            </label>
-            <input
-              type="text"
-              placeholder="Descrição"
-              name="categoryDescription"
-              id="categoryDescription"
-              onChange={formik.handleChange}
-              value={formik.values.categoryDescription}
-            />   
-          </div>  
+          <FormField
+            label="Cor"
+            type="color"
+            name="color"
+            value={values.color}
+            onChange={handleChange}
+          />
 
-          <div className="formField">
-            <label htmlFor="categoryForm">
-              Cor:
-            </label>
-            <input
-              type="text"
-              placeholder="Usuário"
-              name="categoryUser"
-              id="categoryUser"
-              onChange={formik.handleChange}
-              value={formik.values.categoryUser}
-            />   
-          </div>  
-          
-
-
-          <button type="submit">
-            Cadastrar
-          </button>  
-
-                     
-
-          
-          
+          <Button>
+            Cadatrar
+          </Button>
         </form>
-        
+
+        <ul>
+          {categorias.map((categoria) => (
+            <li key={`${categoria.nome}`}>
+              {categoria.name}
+              {' '}
+              -
+              {categoria.description}
+            </li>
+
+          ))}
+        </ul>
 
         <Link to="/">
-          Ir para home
+          Ir para a home
         </Link>
-      </PageDefault>
-    )
+      </div>
+    </PageDefault>
+  );
 }
 
 export default CadastroCategoria;
-
-
-/**
- * <Button variant="contained" color="primary" type="submit">
-            Cadastrar
-          </Button>
-
-          <Button variant="contained" color="info">
-            Limpar
-          </Button>
- * 
- * 
- * 
- * 
- * 
- * 
- */
