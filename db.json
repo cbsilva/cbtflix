@@ -2,15 +2,15 @@
     "categorias": [
         {
             "id": 1,
-            "nome": "Front End",
-            "descricao" : "Uma Categoria Bacanuda",
-            "cor" : "#cbd1ff"
+            "name": "Front End",
+            "description" : "Uma Categoria Bacanuda",
+            "color" : "#cbd1ff"
         },
         {
             "id": 2,
-            "nome": "Front End",
-            "descricao" : "Outra Categoria Bacanuda",
-            "cor" : "#cbd1ff"
+            "name": "Front End",
+            "description" : "Outra Categoria Bacanuda",
+            "color" : "#cbd1ff"
         }
     ]
 

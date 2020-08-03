@@ -1,10 +1,8 @@
-/* eslint linebreak-style: ["error", "windows"] */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
-
 
 function CadastroCategoria() {
   /**
@@ -20,7 +18,7 @@ function CadastroCategoria() {
   const initialValue = {
     name: '',
     description: '',
-    color: '#000000',
+    color: '',
   };
 
   /**
@@ -45,6 +43,23 @@ function CadastroCategoria() {
       value,
     );
   }
+
+  useEffect(() => {
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://cbtflix.herokuapp.com/categorias';
+
+    fetch(URL)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        console.log('resposta', resposta);
+        setCategorias([
+          ...resposta,
+        ]);
+      });
+  }, [
+    values.name,
+  ]);
 
   return (
     <PageDefault>
@@ -91,23 +106,23 @@ function CadastroCategoria() {
             Cadatrar
           </Button>
         </form>
-
-        <ul>
-          {categorias.map((categoria) => (
-            <li key={`${categoria.nome}`}>
-              {categoria.name}
-              {' '}
-              -
-              {categoria.description}
-            </li>
-
-          ))}
-        </ul>
-
-        <Link to="/">
-          Ir para a home
-        </Link>
+        {categorias.length === 0 && (
+          <div>
+            Loading...
+          </div>
+        )}
       </div>
+      <ul>
+        {categorias.map((categoria) => (
+          <li key={`${categoria.id}`}>
+            {categoria.name}
+          </li>
+        ))}
+      </ul>
+
+      <Link to="/">
+        Ir para a home
+      </Link>
     </PageDefault>
   );
 }
