@@ -85,8 +85,6 @@ function FormField({
   const isTextArea = type === 'textarea';
   const tag = isTextArea ? 'textarea' : 'input';
 
-  console.log(type);
-
   return (
     <FormFieldWrapper>
       <label
